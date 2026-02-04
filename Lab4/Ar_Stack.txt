@@ -1,0 +1,41 @@
+package stackqueue;
+import java.util.ArrayList;
+
+public class Ar_Stack <T> {
+	public static final int MAXSIZE = 10;
+	private int top;
+	private ArrayList<T> StackItems;
+	public Ar_Stack() {
+		top = -1;
+		StackItems = new ArrayList<T>();
+	}
+
+	public boolean isEmpty() {
+		return top == -1;
+	}
+
+	public boolean isFull() {
+		return top == MAXSIZE -1;
+	}
+
+	
+	void push(T item) { 
+		  top++;
+		  StackItems.add(item);
+	}
+	
+	T pop() { 
+		  T tmpitem = StackItems.get(top);
+		  StackItems.remove(top);
+		  top--;
+		  return tmpitem;
+
+	}
+	
+	T peek() { 
+		  return StackItems.get(top); 
+	}
+
+	
+
+}
